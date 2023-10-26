@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 // import Dropdown from './dropdown';
 import 'font-awesome/css/font-awesome.min.css';
 import Inboxes from '../components/inboxes';
+import StepperBox from '../components/stepper';
 
 function HomePage() {
 
@@ -49,8 +50,10 @@ function HomePage() {
 
         </div> */}
         <Inboxes />
+       
         
     </div>
+
     </div>
     </div>
   );

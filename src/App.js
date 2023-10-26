@@ -6,6 +6,7 @@ import Signup from './pages/signup';
 import Navbar from './components/navbar';
 import HomePage from './pages/homepage';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import StepperBox from './components/stepper';
 function App() {
   const [{user},dispatch]=useStatevalue();
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route  path='/' Component={Signin} />
       <Route path='/signup' Component={Signup} />
       <Route path='/home' Component={HomePage} />
+      <Route path='/create-inbox' Component={ StepperBox } />
     </Routes>
     </BrowserRouter>
 

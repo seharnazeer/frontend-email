@@ -51,8 +51,26 @@ const Inboxes = () => {
 
 
     const HaveInboxes=()=>{
+        const dummy=[
+            {
+            mail:"xyzdsfgfhyhfsghffhh",
+            documet:1,
+            parsed:1,
+            failed:'-',
+            retention: '30 days',
+            last_activity: '10 days ago'
+            },
+            {
+                mail:"xyzdsfgfhyhfsghffhh",
+                documet:1,
+                parsed:1,
+                failed:'-',
+                retention: '30 days',
+                last_activity: '10 days ago'
+                }
+        ]
         return(
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-2'>
                 <div className='flex justify-between'>
                     <button className=' border-grey-color border-2 text-grey-color p-2 pl-4 pr-4 rounded-sm'>
                         Jump to a mailbox
@@ -62,19 +80,39 @@ const Inboxes = () => {
                     </button>
 
                 </div>
-                <div  className='grid overflow-x-scroll bg-white p-2  grid-cols-[40%_auto_auto_auto_auto_auto] text-grey-color'>
-                    <div>
+                {/* className='grid overflow-x-scroll bg-white p-2  grid-cols-[40%_auto_auto_auto_auto_auto] text-grey-color gap-2' */}
+                <table className='overflow-x-scroll '  >
+                    <tr className='bg-white'>
+                  
+                  <th>
+                    Mailbox Name
+                  </th>
+                    <th>Documents</th>
+                    <th>Parsed</th>
+                    <th>Failed</th>
+                    <th>Retention</th>
+                    <th className='' style={{'white-space':'nowrap'}}>last activity</th>
+                    </tr>
+               
 
-                    </div>
-                    <p>Documents</p>
-                    <p>Parsed</p>
-                    <p>Failed</p>
-                    <p>Retention</p>
-                    <p>last activity</p>
+               {
+                dummy.map((elem)=>(
+                    <tr  className="bg-white p-2 text-center text-grey-color">
+                    <td>
+{elem.mail}
+                    </td>
+                    <td>{elem.documet}</td>
+                    <td>{elem.parsed}</td>
+                    <td>{elem.failed}</td>
+                    <td>{elem.retention}</td>
+                    <td className='' style={{'white-space':'nowrap'}}>{elem.last_activity}</td>
 
-                </div>
+                </tr>
+                ))
+               }
+                </table>
+</div>
 
-            </div>
         )
     }
   return (
