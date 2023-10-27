@@ -13,9 +13,9 @@ const StepperBox = () => {
   const components=[<ParserType />,<ParsingTemplate />, <Create />]
 
   return (
-    <div className="w-full py-4 px-8 gap-4">
-         <h4 className="font-bold text-2xl">Create a mailbox</h4>
-        <p className="text-grey-color">A mailbox is where you will forward your documents for parsing. To keep things organized, we recommend creating a dedicated mailbox for each type of email or document (such as invoices, contracts, Amazon orders etc) Learn more about parser types</p>
+    <div className="w-full md:py-8 md:px-4  gap-4">
+         <h4 className="font-bold text-2xl m-4">Create a mailbox</h4>
+        <p className="text-grey-color m-4">A mailbox is where you will forward your documents for parsing. To keep things organized, we recommend creating a dedicated mailbox for each type of email or document (such as invoices, contracts, Amazon orders etc) Learn more about parser types</p>
       <Stepper
         className="text-blue-800"
         activeStep={activeStep}
@@ -23,7 +23,7 @@ const StepperBox = () => {
         isFirstStep={(value) => setIsFirstStep(value)}
       >
         <Step onClick={() => setActiveStep(0)}>
-          <div className="flex gap-2">
+          <div className="flex gap-2 md:scale-100 scale-75">
             <p
               className={`${
                 activeStep === 0 ? "bg-blue-900" : "text-grey-color"
@@ -39,7 +39,7 @@ const StepperBox = () => {
           </div>
         </Step>
         <Step>
-        <div className="flex gap-2">
+        <div className="flex gap-2 md:scale-100 scale-75">
             <p
               className={`${
                 activeStep === 1 ? "bg-blue-900" : "text-grey-color"
@@ -55,7 +55,7 @@ const StepperBox = () => {
           </div>
         </Step>
         <Step>
-        <div className="flex gap-2">
+        <div className="flex gap-2 md:scale-100 scale-75">
             <p
               className={`${
                 activeStep === 2 ? "bg-blue-900" : "text-grey-color"
@@ -71,7 +71,7 @@ const StepperBox = () => {
           </div>
         </Step>
       </Stepper>
-      <div className="mt-16 flex flex-col items-center gap-6 w-full">
+      <div className="mt-16 flex flex-col items-center gap-6 w-full md:scale-100 scale-75">
        
         {
             components[activeStep]

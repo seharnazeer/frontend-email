@@ -32,7 +32,7 @@ const ParserType = () => {
            
 
         </div>
-        <div className='bg-blue-color p-4 rounded-md text-white font-bold'>
+        <div className='bg-blue-color  md:p-4 p-2 text-[10px] rounded-md text-white font-bold'>
         2 credit / page
         </div>
         </div>
@@ -63,7 +63,7 @@ const ParserType = () => {
            
 
         </div>
-        <div className='bg-blue-color p-4 rounded-md text-white font-bold'>
+        <div className='bg-blue-color md:p-4 p-2 text-[10px] rounded-md text-white font-bold'>
         1 credit / page
         </div>
         </div>

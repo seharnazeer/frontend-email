@@ -7,6 +7,10 @@ import Navbar from './components/navbar';
 import HomePage from './pages/homepage';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import StepperBox from './components/stepper';
+import Email from './pages/dash/email';
+import Template from './pages/dash/template';
+import Parsed from './pages/dash/parsed';
+import Fields from './pages/dash/fields';
 function App() {
   const [{user},dispatch]=useStatevalue();
   return (
@@ -17,6 +21,10 @@ function App() {
       <Route path='/signup' Component={Signup} />
       <Route path='/home' Component={HomePage} />
       <Route path='/create-inbox' Component={ StepperBox } />
+      <Route path='/inbox' Component={ Email } />
+      <Route path='/template' Component={ Template } />
+      <Route path='/parsed' Component={ Parsed } />
+      <Route path='/fields' Component={ Fields } />
     </Routes>
     </BrowserRouter>
 
