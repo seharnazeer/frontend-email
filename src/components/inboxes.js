@@ -1,6 +1,10 @@
 import React from 'react'
+import { useStatevalue } from '../ccontext/stateProvider'
+import { useNavigate } from 'react-router-dom';
 
 const Inboxes = () => {
+  const navigate=useNavigate();
+ const [{inboxes},dispatch]=useStatevalue();
     const ZeroInboxes=()=>{
         const Content_Data=[
             {
@@ -75,7 +79,7 @@ const Inboxes = () => {
                     <button className=' border-grey-color border-2 text-grey-color p-2 pl-4 pr-4 rounded-sm'>
                         Jump to a mailbox
                     </button>
-                    <button className='bg-blue-color text-white p-2 rounded-sm'>
+                    <button className='bg-blue-color text-white p-2 rounded-sm' onClick={()=>navigate('/create-inbox')}>
                         Create mailbox
                     </button>
 
@@ -93,19 +97,27 @@ const Inboxes = () => {
                     <th>Retention</th>
                     <th className='' style={{'white-space':'nowrap'}}>last activity</th>
                     </tr>
-               
+               <tr className='bg-grey-color h-2'>
+
+               </tr>
 
                {
-                dummy.map((elem)=>(
-                    <tr  className="bg-white p-2 text-center text-grey-color">
-                    <td>
+                inboxes.map((elem)=>(
+                    <tr  className="bg-white p-2 text-center text-grey-color cursor-pointer">
+                      <td>{elem}</td>
+                      <td>2</td>
+                      <td>yes</td>
+                      <td>failed</td>
+                      <td>-</td>
+                      <td>-</td>
+                    {/* <td>
 {elem.mail}
                     </td>
                     <td>{elem.documet}</td>
                     <td>{elem.parsed}</td>
                     <td>{elem.failed}</td>
                     <td>{elem.retention}</td>
-                    <td className='' style={{'white-space':'nowrap'}}>{elem.last_activity}</td>
+                    <td className='' style={{'white-space':'nowrap'}}>{elem.last_activity}</td> */}
 
                 </tr>
                 ))

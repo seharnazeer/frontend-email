@@ -1,13 +1,18 @@
 const reducer=(state,action)=>{
-    switch(action.type){
-        case "User":
+    switch (action.type) {
+        case "SET_INBOXES":
             return {
                 ...state,
-                user:action.user
+                inboxes: action.inboxes
             }
-
+            case "SET_CURRENT_INBOX":
+                return {
+                    ...state,
+                    inboxname: action.inboxname
+                }
+     
         default:
-            return state
+            return state;
     }
 
 }

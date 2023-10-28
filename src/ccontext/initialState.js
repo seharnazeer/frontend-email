@@ -1,4 +1,6 @@
 
 export const initialState={
-    user:''
+    inboxes: [],
+    inboxname : ''
+ 
 }
